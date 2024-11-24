@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editable HTML to Code Converter</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        #editableContent {
+            border: 1px solid #ddd;
+            padding: 15px;
+            margin-bottom: 20px;
+        }
+        #output {
+            white-space: pre-wrap;
+            background-color: #f9f9f9;
+            padding: 10px;
+            border: 1px solid #ddd;
+            margin-top: 20px;
+        }
+        button {
+            margin-top: 10px;
+            padding: 10px 20px;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Editable HTML to Code Converter</h1>
+    
+    <div id="editableContent" contenteditable="true">
+        <p><strong>IQ3516 BALLET CHANDELIER</strong></p>
+
+        <p style="text-align: justify;"><strong>DESCRIPTION:</strong><br />
+        A cluster of pendant lamps positioned at different heights creates a sophisticated sense of movement, adding a striking textural accent to a modern interior. This chandelier by Massimiliano Raggi comprises a base in metal with a bronzed finish alternating with shades made of borosilicate glass in a tinted or amber-colored finish. The piece is enriched with hand-applied artistic mosaic. The total weight of this lamp is 16 kg. There are 11 3W LED bulbs for a total of 6000 lumens and a temperature of 3000K. The 220V can be customized with other voltage. This piece is CE and UL certified. Contract and commercial certifications available upon request.</p>
+
+        <p style="text-align: justify;"><strong>SPECIFICATIONS:</strong><br />
+        Collection: Modern<br />
+        Size: 16" Diameter x 16"Width x 39" Height (Custom sizes also available)<br />
+        Materials: Borosilicate glass, Metal<br />
+        Shape: Pendant<br />
+        Frame Finished: Bronzed (Different finish available at no additional cost)<br />
+        Weight: 35 Ibs<br />
+        Extension: Adjustable cord customizable up to 12 ft<br />
+        Bulbs: 11 LED 3W 220V 6000 lumens 3000K<br />
+        Certification Approved: UL-CE-EU<br />
+        Assembly: Some assembly required.<br />
+        Dimmer Switch Compatible: Optional<br />
+        Shipping: Free Door-To-Door Shipping Worldwide!<br />
+        Rush Order: 4-8 Weeks; 18% added to the total<br />
+        Regular Lead Time: 6-10 Weeks<br />
+        Warranty: 5 Years Full Coverage (includes replacement parts)<br />
+        &nbsp;<br />
+        <strong>SIZE OPTIONS:</strong></p>
+
+        <table border="1" cellpadding="1" cellspacing="1" style="width:500px;">
+            <tbody>
+                <tr>
+                    <td><strong>Size:</strong></td>
+                    <td><strong>Price:</strong></td>
+                </tr>
+                <tr>
+                    <td>16" Diameter x 16"Width x 39" Height (as shown on image)</td>
+                    <td>$7240.00</td>
+                </tr>
+                <tr>
+                    <td>21" Diameter x 21"Width x 39" Height</td>
+                    <td>$7740.00</td>
+                </tr>
+                <tr>
+                    <td>26" Diameter x 26"Width x 39" Height</td>
+                    <td>$8740.00</td>
+                </tr>
+                <tr>
+                    <td>31" Diameter x 31"Width x 39" Height</td>
+                    <td>$8740.00</td>
+                </tr>
+                <tr>
+                    <td>36" Diameter x 36"Width x 39" Height</td>
+                    <td>$9240.00</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <p>Custom Sizes, Finishes, Colors Available Upon Request</p>
+    </div>
+    
+    <button onclick="generateCode()">Generate Code</button>
+    <button onclick="copyToClipboard()">Copy Code</button>
+    <div id="output"></div>
+
+    <script>
+        function generateCode() {
+            const editableContent = document.getElementById('editableContent').innerHTML;
+            const output = document.getElementById('output');
+            output.textContent = editableContent;
+        }
+
+        function copyToClipboard() {
+            const output = document.getElementById('output');
+            const textToCopy = output.textContent;
+            const tempTextArea = document.createElement("textarea");
+            tempTextArea.value = textToCopy;
+            document.body.appendChild(tempTextArea);
+            tempTextArea.select();
+            document.execCommand("copy");
+            document.body.removeChild(tempTextArea);
+            alert("Code copied to clipboard!");
+        }
+    </script>
+</body>
+</html>
